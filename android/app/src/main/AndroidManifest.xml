@@ -12,6 +12,20 @@
       android:theme="@style/AppTheme">
       <meta-data android:name="com.facebook.sdk.ApplicationId"
         android:value="@string/facebook_app_id"/>
+      <meta-data
+        android:name="com.zing.zalo.zalosdk.appID"
+        android:value="@string/appID" />
+
+      <activity
+        android:name="com.zing.zalo.zalosdk.oauth.BrowserLoginActivity">
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+          <data android:scheme="zalo-<YOUR_ZALO_APP_ID>" />
+          <!-- eg: <data android:scheme="zalo-1234567890" />-->
+        </intent-filter>
+      </activity>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
